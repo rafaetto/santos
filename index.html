@@ -183,7 +183,7 @@ footer{max-width:980px;margin:36px auto 0;font-size:13px;color:var(--mut);border
 const $=s=>document.querySelector(s),f=n=>String(n).replace('.',',');
 // probabilidades
 const P=[["Libertadores (1º–5º)","4,7%","chance de terminar nesta faixa","var(--lib)",4.7],["Sul-Americana (6º–11º)","92,4%","chance de terminar nesta faixa","var(--sul)",92.4],["Rebaixamento (17º–20º)","menos de 0,1%","chance de terminar no Z4","var(--z4)",0.1]];
-$("#probs").innerHTML=P.map(p=>`<div class="card prob" style="--c:${p[3]}"><small>${p[0]}</small><b>${p[1]}</b><div class="meter"><span style="width:${Math.max(p[4],1)}%"></span></div><em>${p[2]}</em></div>`).join("");
+$("#probs").innerHTML=P.map(p=>`<div class="card prob" style="--c:${p[3]}"><small>${p[0]}</small><b>${p[1]}</b><div class="meter"><span style="width:${p[4]}%"></span></div><em>${p[2]}</em></div>`).join("");
 // distribuição
 const D=[[1,0],[2,0],[3,.3],[4,1],[5,3.4],[6,8.5],[7,18],[8,35],[9,17.8],[10,9],[11,4],[12,1.9],[13,.8],[14,.2],[15,.1],[16,.05],[17,0],[18,0],[19,0],[20,0]];
 $("#dist").innerHTML=D.map((d,i)=>{const h=d[1]/35*145,x=40+i*29,c=d[0]<=5?"var(--lib)":d[0]<=11?"var(--sul)":"var(--gray)",me=d[0]==8;
